@@ -1,0 +1,243 @@
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f12;   /* deep dark background */
+  color: #e6efe9;        /* soft off-white for text */
+  line-height: 1.7;
+}
+
+
+/* HEADER */
+header {
+  background: #071011;   /* near-black header */
+  color: #e6efe9;
+  padding: 15px 25px;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(46, 201, 150, 0.08); /* subtle mint border */
+}
+
+.logo {
+  position: absolute;
+  left: 25px;
+  font-size: 22px;
+}
+.logo span {
+  color: #2ec996; /* mint accent */
+}
+
+#navi {
+  display: flex;
+  gap: 25px;
+}
+
+#navi a {
+  color: #dceee4;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+/* Hover */
+#navi a:hover {
+  background: rgba(46,201,150,0.08);
+  color: #e6efe9;
+}
+
+/* Click Effect */
+#navi a:active {
+  background: rgba(46,201,150,0.22);
+  color: #fff;
+}
+
+
+/* MOBILE MENU CONTROL */
+#hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #e6efe9;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+
+/* SECTIONS */
+section {
+  margin: 110px 25px 30px;
+  background: #071717;  /* deep card background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  scroll-margin-top: 100px;
+}
+
+section h2 {
+  color: #9ff0d6; /* pale mint title */
+  border-bottom: 1px solid rgba(46,201,150,0.07);
+  margin-bottom: 15px;
+  padding-bottom: 6px;
+}
+
+.center {
+  text-align: center;
+}
+
+
+/* PROFILE IMAGE */
+.my_pic {
+  width: 160px;
+  border-radius: 20px;
+  border: 2px solid rgba(46,201,150,0.12); /* soft mint border */
+  box-shadow: 0 6px 18px rgba(46,201,150,0.04);
+  margin-bottom: 20px;
+}
+
+
+/* BUTTON */
+.btn_resume {
+  background: #2ec996; /* mint button */
+  color: #071011;     /* dark text for contrast */
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn_resume:hover {
+  background: #28b882;
+  color: #071011;
+}
+
+
+/* CARDS (Projects) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #0a1714;  /* slightly lighter than section */
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(46,201,150,0.04);
+  transition: 0.18s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: #0d2320; /* hover lift */
+}
+
+.card strong a {
+  color: #e6efe9;
+  text-decoration: none;
+}
+
+.card p {
+  color: #cfeee0;
+  margin: 8px 0 12px;
+}
+
+
+/* CONTACT FORM */
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 350px;
+  margin: auto;
+
+  /* Glow */
+  box-shadow: 0 0 12px rgba(46,201,150,0.18);
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+.contact_form input,
+.contact_form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: #e6efe9;
+  outline: none;
+}
+
+/* Focus Effect */
+.contact_form input:focus,
+.contact_form textarea:focus {
+  border: 1px solid #2ec996;
+  box-shadow: 0 0 8px rgba(46,201,150,0.35);
+  background: rgba(255,255,255,0.05);
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  background: transparent;
+  border-top: 1px solid rgba(46,201,150,0.06);
+  color: #cfeee0;
+}
+
+
+/* RESPONSIVE */
+@media(max-width: 750px) {
+
+  #hamburger {
+    display: block;
+  }
+
+  #navi {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #071011;
+    padding: 10px 0;
+    border-top: 1px solid rgba(46,201,150,0.06);
+  }
+
+  #navi.navOpen {
+    display: flex;
+  }
+
+  #navi a {
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+    padding: 14px;
+  }
+
+  .logo {
+    left: 18px;
+  }
+}
